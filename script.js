@@ -32,6 +32,7 @@ function getNum(th){
   return number;
   
 }
+
    function showResult(operatornSign,firstNumber, secondNumber){
 
   let result = '' ;
