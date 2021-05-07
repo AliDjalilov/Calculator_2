@@ -1,49 +1,39 @@
+function getUserAnswers(){
+  
+ const operatornSign = getOperator();
+ const firstNumber = getNum(1);
+ const secondNumber = getNum(2);
+
+ showResult(operatornSign,firstNumber, secondNumber);
+}
+
 function getOperator(){
   
-  let operator  = '';
+  let actionСhoice   = '';
   
   do {
-    operator  = prompt('Enter operator');
+    actionСhoice   = prompt('Enter operator');
     
-  } while(operator  !== '+' && operator !== '-' && operator !== '*' && operator !== '/' );
+  } while(actionСhoice   !== '+' && actionСhoice  !== '-' && actionСhoice  !== '*' && actionСhoice  !== '/' );
 
-  return operator;
+  return actionСhoice ;
 }
 
-
-function getFirstNum(){
+function getNum(th){
   
-  let firstNum;
+  let number = '';
   
     do {
-    firstNum = +prompt('Enter the first number');
+    number = +prompt(`Enter the ${th} number`);
+
     
-  } while(isNaN(firstNum));
+  } while(isNaN(number));
 
-  return firstNum;
+  return number;
+  
 }
+   function showResult(operatornSign,firstNumber, secondNumber){
 
-
-
-function getSecondNum(){
-  
-  let secondNum;
-  
-    do {
-    secondNum = +prompt('Enter the second number');
-    
-  } while(isNaN(secondNum));
- 
-  return secondNum;
-}
-
-
-function showResult(){
- const operatornSign = getOperator();
- const firstNumber = getFirstNum();
- const secondNumber = getSecondNum();
- 
-  
   let result = '' ;
   
  switch(operatornSign) {
@@ -62,9 +52,9 @@ function showResult(){
      default: 
      'You entered an incorrect entry';
  }
+
   
 alert(`${firstNumber} ${operatornSign}  ${secondNumber} = ${result}` );
 }
 
-
-showResult();
+getUserAnswers();
